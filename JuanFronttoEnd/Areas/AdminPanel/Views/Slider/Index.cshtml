@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Slider>
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+
+
+
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Slider</h4>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Library
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <a class="btn btn-success" asp-action="Create">Create Slider</a>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Settings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var slide in Model)
+                        {
+                            <tr>
+                                <th scope="row">@count</th>
+                                <td><img src="~/img/slider/@slide.Image" style="width:150px" ; height="75px" /></td>
+                                <td>
+                                    <a class="btn btn-warning" asp-action="Update" asp-route-id="@slide.Id"><i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@slide.Id"><i class=" fas fa-eraser"></i></a>
+                                </td>
+                            </tr>
+                            count++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
