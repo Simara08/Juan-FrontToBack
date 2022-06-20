@@ -152,3 +152,4 @@ C:\Users\simar\source\repos\JuanFronttoEnd\JuanFronttoEnd\obj\Debug\netcoreapp3.
 C:\Users\simar\source\repos\JuanFronttoEnd\JuanFronttoEnd\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Slider\Update.cshtml.g.cs
 C:\Users\simar\source\repos\JuanFronttoEnd\JuanFronttoEnd\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\_ViewImports.cshtml.g.cs
 C:\Users\simar\source\repos\JuanFronttoEnd\JuanFronttoEnd\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\_ViewStart.cshtml.g.cs
+C:\Users\simar\source\repos\JuanFronttoEnd\JuanFronttoEnd\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Index.cshtml.g.cs

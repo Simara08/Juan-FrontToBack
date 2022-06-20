@@ -11,22 +11,22 @@ namespace JuanFronttoEnd.Controllers
 {
     public class HomeController : Controller
     {
-        private AppDbContext _context { get; }
-        public HomeController(AppDbContext context)
+        private AppDbContext _db { get; }
+        public HomeController(AppDbContext db)
         {
-            _context = context;
+            _db = db;
         }
         public IActionResult Index()
         {
             HomeViewModel home = new HomeViewModel
             {
-                Slides = _context.Slides.ToList(),
-                Features= _context.Features.ToList(),
-                Categories = _context.Categories.Where(c => !c.IsDeleted)
+                Slides = _db.Slides.ToList(),
+                Features= _db.Features.ToList(),
+                Categories = _db.Categories.Where(c => !c.IsDeleted)
                 .Include(pc => pc.ProductsCategories).ThenInclude(ct => ct.Product).ToList(),
-                Products = _context.Products.Where(p => !p.IsDeleted).Include(p => p.Images).ToList(),
-                Blogs=_context.Blogs.ToList(),
-                Brands = _context.Brands.ToList()
+                Products = _db.Products.Where(p => !p.IsDeleted).Include(p => p.Images).ToList(),
+                Blogs= _db.Blogs.ToList(),
+                Brands = _db.Brands.ToList()
             };
 
             return View(home);

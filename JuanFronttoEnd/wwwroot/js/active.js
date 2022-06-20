@@ -1,3 +1,57 @@
+
+$("#button-3-li").css("display", "none");
+
+$(document).ready(function () {
+	$(document).on('click', '#button2', function () {
+		let length = $("#product-list").children().length;
+		let maxCount = $("#count").val();
+		let list = $('#product-list');
+
+
+
+		$.ajax({
+			url: `http://localhost:31234/Shop/LoadProducts?skip=${length}`,
+			method: "GET",
+			success: function (first) {
+				list.children().remove();
+				list.append(first);
+
+				$("#button-1-li").removeClass('active');
+				$("#button-2-li").addClass('active');
+
+
+			}
+
+		})
+
+	})
+})
+$(document).ready(function () {
+	$(document).on('click', '#button1', function () {
+		let length = $("#product-list").children().length;
+		let maxCount = $("#count").val();
+		let list = $('#product-list');
+
+
+
+		$.ajax({
+			url: `http://localhost:31234/Shop/LoadProducts?skip=${length}`,
+			method: "GET",
+			success: function (second) {
+				list.children().remove();
+				list.append(second);
+
+				$("#button-2-li").removeClass('active');
+				$("#button-1-li").addClass('active');
+
+
+			}
+
+		})
+
+	})
+})
+
 (function ($) {
 	"use strict";
 
