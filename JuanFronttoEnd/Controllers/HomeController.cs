@@ -11,11 +11,11 @@ namespace JuanFronttoEnd.Controllers
 {
     public class HomeController : Controller
     {
-        private AppDbContext _db { get; }
-        public HomeController(AppDbContext db)
-        {
-            _db = db;
-        }
+            private AppDbContext _db { get; }
+            public HomeController(AppDbContext db)
+            {
+                _db = db;
+            }
         public IActionResult Index()
         {
             HomeViewModel home = new HomeViewModel

@@ -22,6 +22,7 @@ namespace JuanFronttoEnd.DAL
         public DbSet<ProductsCategories> ProductsCategories { get; set; }
         public DbSet<Blogs> Blogs { get; set; }
         public DbSet<Brands> Brands { get; set; }
+        public DbSet<Setting> Settings { get; set; }
     }
 
 }
